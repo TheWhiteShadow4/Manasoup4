@@ -7,7 +7,7 @@ public class Units : MonoBehaviour
     public Fraction fraction = Fraction.Neutral;
     public int strength = 5;
     public float strengthIntervall = 0.5f;
-    [NonSerialized] public PointGeneration target;
+    public PointGeneration target;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,32 +16,16 @@ public class Units : MonoBehaviour
             if (poi != target) return;
 
             Debug.Log("hit");
-
-            if (target.fraction != fraction)
-            {
-                StartCoroutine(UnitAbrechnung());
-            }
-            else
-            {
-                target.currentPoints += strength;
-                strength = 0;
-            }
+            StartCoroutine(UnitAbrechnung());           
         }
     }
 
-    private void Update()
-    {
-        if (strength <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private IEnumerator UnitAbrechnung()
     {
         Debug.Log("jop");
-        
-        while (strength > 0)
+
+        while (strength > 0 && target.currentPoints > 0)
         {
             // FIXME: Was wenn das Fort schon eingenommen wurde?
 
@@ -50,5 +34,18 @@ public class Units : MonoBehaviour
             yield return new WaitForSeconds(strengthIntervall);
         }
 
+        if (strength <= 0)
+        {
+            Destroy(gameObject);
+            yield return null;
+        }
+
+        if (target.currentPoints <= 0)
+        {
+            target.fraction = fraction;
+            target.currentPoints += strength;
+            strength = 0;
+            Destroy(gameObject);
+        }          
     }
 }

@@ -6,9 +6,9 @@ using NavMeshPlus.Components;
 public class UnitMover : MonoBehaviour
 {
 
-
     public GameObject targetObject;
     GameObject lastTargetObject;
+    public GameObject particleEfect;
     NavMeshAgent agent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -49,6 +49,9 @@ public class UnitMover : MonoBehaviour
             Debug.Log("Current area cost: "+areaCost);    
         }
         agent.speed = 10-areaCost*2;
+
+        if (agent.velocity != Vector3.zero) particleEfect.transform.rotation = Quaternion.LookRotation(agent.velocity);
+
     }
 
     void Update()
