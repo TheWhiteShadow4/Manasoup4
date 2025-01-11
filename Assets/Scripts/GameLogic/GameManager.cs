@@ -1,5 +1,7 @@
 using Events;
 using UnityEngine;
+using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Units unitPrefab;
 
     private Camera activeCamera;
+    [NonSerialized] public List<PointGeneration> allPois;
 
     public Camera ActiveCamera
     {
@@ -36,9 +39,18 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+        allPois = new List<PointGeneration>();
     }
 
+    public void RegisterPoi(PointGeneration newPoi)
+    {
+        allPois.Add(newPoi);
+    }
 
+    public void UnregisterPoi(PointGeneration poi)
+    {
+        allPois.Remove(poi);
+    }
   
     public void StartRaid(GameObject sourceObject, PointGeneration targetObject, int unitCount)
     {
@@ -47,6 +59,4 @@ public class GameManager : MonoBehaviour
         newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject.gameObject;
         Debug.Log("Raiding "+targetObject.name + " mit " + unitCount + " Units");
     }
-    
-
 }

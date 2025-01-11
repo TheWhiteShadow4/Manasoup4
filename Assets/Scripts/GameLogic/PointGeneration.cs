@@ -30,6 +30,16 @@ public class PointGeneration : SelectableObject
         CapturePoi(fraction);
     }
 
+    private void OnEnable()
+    {
+        GameManager.Instance.RegisterPoi(this);
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.UnregisterPoi(this);
+    }
+
     public override void Attack()
     {
         GameManager.Instance.raidEvent.RaiseEvent(this);
