@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21664369}
   - component: {fileID: 21664370}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: POISprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 131080579}
   - component: {fileID: 131080580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SelectMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,9 @@ GameObject:
   - component: {fileID: 891859153}
   - component: {fileID: 891859157}
   - component: {fileID: 891859156}
-  m_Layer: 0
+  - component: {fileID: 891859158}
+  - component: {fileID: 891859159}
+  m_Layer: 6
   m_Name: Unit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +744,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891859152}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -800,7 +802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6277bcdaee8cba1448809cbb6463abe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 0}
+  targetObject: {fileID: 2133879239}
 --- !u!195 &891859157
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -823,6 +825,47 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &891859158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891859152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbb42d22c2a45244b4bf37cddbd582f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fraction: 1
+  Strength: 5
+--- !u!50 &891859159
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891859152}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1001287078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,6 +1555,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2133879239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7615999618243573752, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
+  m_PrefabInstance: {fileID: 7975927602557796541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1491683810708668862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1620,6 +1668,10 @@ PrefabInstance:
     - target: {fileID: 4705129971394834299, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188348069327848571, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7526584298405457332, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
       propertyPath: fraction
