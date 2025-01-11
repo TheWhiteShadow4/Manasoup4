@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 447684483}
   - component: {fileID: 447684482}
   - component: {fileID: 447684481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: POI (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159e57bf736e6494aa972660d9c2a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSelected: 0
 --- !u!58 &447684482
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -612,7 +611,7 @@ GameObject:
   - component: {fileID: 534593396}
   - component: {fileID: 534593398}
   - component: {fileID: 534593397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: POI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -648,7 +647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159e57bf736e6494aa972660d9c2a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSelected: 0
 --- !u!58 &534593398
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -847,7 +845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013e0635bc55fb24294488f471c4778a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectionChangedEvent: {fileID: 11400000, guid: 815b3c02dff52724a8e04f83b1bae065, type: 2}
+  minDragDist: 5
+  selectionMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &763360298
 GameObject:
   m_ObjectHideFlags: 0
@@ -967,7 +968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159e57bf736e6494aa972660d9c2a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSelected: 0
 --- !u!58 &891859154
 CircleCollider2D:
   m_ObjectHideFlags: 0
