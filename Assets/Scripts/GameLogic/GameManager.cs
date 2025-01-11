@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
         emission.rateOverTime = unitCount * unitCountMultiplier;
         newUnit.fraction = sourceObject.fraction;
         newUnit.target = targetObject;
+        newUnit.strength = unitCount;
         newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject.gameObject;
         Debug.Log("Raiding "+targetObject.name + " mit " + unitCount + " Units");
     }

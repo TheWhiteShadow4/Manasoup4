@@ -4,7 +4,6 @@ using UnityEngine;
 public class PointGeneration : SelectableObject
 {
     public int maxPoints = 100;
-    public int pointPerSec = 1;
     public float pointInterval = 1f;
     public int currentPoints = 0;
     public bool isCounting = false;
@@ -57,7 +56,7 @@ public class PointGeneration : SelectableObject
         
         if (isCounting && currentPoints < maxPoints && Time.fixedTime > lastTick + pointInterval)
         {
-            currentPoints = Mathf.Min(currentPoints + pointPerSec, maxPoints);
+            currentPoints = Mathf.Min(currentPoints + 1, maxPoints);
             lastTick += pointInterval;
         }
 

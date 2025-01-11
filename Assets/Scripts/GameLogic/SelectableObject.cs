@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
+[SelectionBase]
 public class SelectableObject : MonoBehaviour
 {
     public static int PlayerLayer = 6;
