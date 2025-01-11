@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         psMain.maxParticles = unitCount*unitCountMultiplier;
         var emission = ps.emission;
         emission.rateOverTime = unitCount*unitCountMultiplier;
+        newUnit.fraction = sourceObject.GetComponent<SelectableObject>().fraction;
         newUnit.target = targetObject;
         newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject.gameObject;
         Debug.Log("Raiding "+targetObject.name + " mit " + unitCount + " Units");
