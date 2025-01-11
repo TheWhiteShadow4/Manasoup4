@@ -7,6 +7,20 @@ public class GameManager : MonoBehaviour
 
     public SelectionEventChannelSO selectionChangedEvent;
 
+    private Camera activeCamera;
+
+    public Camera ActiveCamera
+    {
+        get
+        {
+            if (activeCamera == null)
+            {
+                activeCamera = Camera.main;
+            }
+            return activeCamera;
+        }
+    }
+
     private void Awake()
     {
         if (Instance == null)

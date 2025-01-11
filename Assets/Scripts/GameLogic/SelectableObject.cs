@@ -20,13 +20,13 @@ public class SelectableObject : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (Mouse.current.leftButton.isPressed) Select(!Keyboard.current.shiftKey.isPressed);
-        if (Mouse.current.rightButton.isPressed) Deselect();
+        if (Mouse.current.leftButton.wasPressedThisFrame) Select(!Keyboard.current.shiftKey.isPressed);
+        if (Mouse.current.rightButton.wasPressedThisFrame) Deselect();
     }
 
     internal void MarkAsSelected(bool selected)
     {
-        Debug.Log("select " + gameObject.name + " " + selected);
+        //Debug.Log("select " + gameObject.name + " " + selected);
 
         isSelected = selected;
         if (selectMarker) selectMarker.SetActive(selected);
