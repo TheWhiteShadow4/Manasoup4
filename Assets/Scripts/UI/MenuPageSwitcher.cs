@@ -1,20 +1,21 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class MenuPageSwitcher : MonoBehaviour
 {
     public GameObject[] pages;
     public GameObject backButton;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public AudioSlider[] audioSliders;
+
     void Start()
     {
+        foreach (var slider in audioSliders)
+        {
+            slider.ApplyPlayerPrefs();
+        }
         ShowPage(0);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ShowPage(int index)
@@ -31,6 +32,11 @@ public class MenuPageSwitcher : MonoBehaviour
             }
         }
         backButton.SetActive(index != 0);
+    }
+
+    public void LoadScene(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex);
     }
 
     public void ExitGame()

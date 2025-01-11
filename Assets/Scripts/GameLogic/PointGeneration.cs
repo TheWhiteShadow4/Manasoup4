@@ -5,48 +5,79 @@ using UnityEngine.UI;
 
 public class PointGeneration : MonoBehaviour
 {
+    public static int PlayerLayer = 6;
+    public static int EnemyLayer = 7;
+    public static int NeutralLayer = 8;
+
+    public Fraction fraction = Fraction.Neutral;
     public int maxPoints = 100;
     public int pointPerSec = 1;
-    public int pointInterval = 1;
+    public float pointInterval = 1f;
     public int currentPoints = 0;
     public bool isCounting = false;
+    private float lastTick;
 
-    public TextMeshProUGUI pointsText;
+    public SpriteRenderer spriteRenderer;
+    public PointMarker pointMarkerPrefab;
 
-   
-    private void Update()
+    private PointMarker pointMarker;
+
+    private void Start()
     {
-        if (isCounting == false && gameObject.CompareTag("Captured"))
+        if (pointMarker == null)
         {
-            StartCoroutine(count());
+            pointMarker = Instantiate(pointMarkerPrefab, GameManager.Instance.hud.transform);
+            pointMarker.transform.position = GameManager.Instance.ActiveCamera.WorldToScreenPoint(transform.position);
         }
 
-        if (gameObject.CompareTag("Captured") == false)
+        CapturePoi(fraction);
+    }
+
+    void CapturePoi(Fraction newFraction)
+    {
+        fraction = newFraction;
+        isCounting = newFraction != Fraction.Neutral;
+        lastTick = Time.fixedTime;
+        MarkPoiForFraction();
+    }
+
+    private void FixedUpdate()
+    {
+        if (isCounting && currentPoints < maxPoints && Time.fixedTime > lastTick + pointInterval)
         {
-            isCounting = false;
+            currentPoints = Mathf.Min(currentPoints + pointPerSec, maxPoints);
+            lastTick = Time.fixedTime;
         }
 
-        if (!pointsText) return;
+        if (!pointMarker) return;
         if (currentPoints == 0)
         {
-            pointsText.enabled = false;
+            pointMarker.enabled = false;
         }
         else
         {
-            pointsText.enabled = true;
+            pointMarker.enabled = true;
         }
 
-        pointsText.text = "" + currentPoints;
+        pointMarker.UpdateText(currentPoints.ToString());
     }
 
-    private IEnumerator count()
+    private void MarkPoiForFraction()
     {
-        isCounting = true;
-
-        while (currentPoints < maxPoints && gameObject.CompareTag("Captured"))
+        switch (fraction)
         {
-           currentPoints += pointPerSec;
-           yield return new WaitForSeconds(pointInterval);
-        }      
+            case Fraction.Neutral:
+                spriteRenderer.color = Color.grey;
+                gameObject.layer = NeutralLayer;
+                break;
+            case Fraction.Player:
+                spriteRenderer.color = Color.green;
+                gameObject.layer = PlayerLayer;
+                break;
+            case Fraction.Enemy:
+                spriteRenderer.color = Color.red;
+                gameObject.layer = EnemyLayer;
+                break;
+        }
     }
 }

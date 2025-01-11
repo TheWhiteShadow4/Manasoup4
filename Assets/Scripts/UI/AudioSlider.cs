@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -19,6 +20,13 @@ public class AudioSlider : MonoBehaviour
 
     void OnValueChanged(float newValue)
     {
-        audioMixer.SetFloat(mixerGroup, newValue - 80);
+        float shiftedValue = newValue - 80;
+        audioMixer.SetFloat(mixerGroup, shiftedValue);
+        PlayerPrefs.SetFloat(mixerGroup, shiftedValue);
+    }
+
+    public void ApplyPlayerPrefs()
+    {
+        audioMixer.SetFloat(mixerGroup, PlayerPrefs.GetFloat(mixerGroup, 0));
     }
 }
