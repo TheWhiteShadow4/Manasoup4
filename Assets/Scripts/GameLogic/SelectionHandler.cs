@@ -76,6 +76,7 @@ public class SelectionHandler : MonoBehaviour
         if (Mouse.current.leftButton.wasReleasedThisFrame && isDragging)
         {
             DeselectAll();
+            isDragging = false;
             selectionRect.enabled = false;
             Vector2 dragEnd = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             dragEnd = dragEnd.Floor();
