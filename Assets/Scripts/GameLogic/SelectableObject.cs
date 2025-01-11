@@ -28,17 +28,7 @@ public class SelectableObject : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            // Was bin ich überhaupt?
-            if (fraction == Fraction.Player)
-            {
-                Select(!Keyboard.current.shiftKey.isPressed);
-            }
-            else
-            {
-                Attack();
-            }
-
-            
+            Attack();
         }
         if (Mouse.current.rightButton.wasPressedThisFrame) Deselect();
     }

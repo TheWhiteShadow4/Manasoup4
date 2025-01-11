@@ -212,6 +212,7 @@ MonoBehaviour:
   fraction: 1
   strength: 5
   strengthIntervall: 0.5
+  target: {fileID: 0}
 --- !u!50 &5224949615429895416
 Rigidbody2D:
   serializedVersion: 5
@@ -345,7 +346,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0

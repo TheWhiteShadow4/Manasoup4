@@ -1,8 +1,6 @@
-using System.Collections;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
+[SelectionBase]
 public class PointGeneration : SelectableObject
 {
     public int maxPoints = 100;

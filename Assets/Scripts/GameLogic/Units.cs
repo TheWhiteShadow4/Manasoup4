@@ -22,6 +22,7 @@ public class Units : MonoBehaviour
 
     private IEnumerator UnitAbrechnung()
     {
+        // Geht nicht, wenn Ziel bereits eingenommen ist
         while (strength > 0 && target.currentPoints > 0)
         {
             target.currentPoints -= 1;
