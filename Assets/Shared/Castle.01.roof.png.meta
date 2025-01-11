@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Castle.01.roof_0: -4039865309512278224
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
