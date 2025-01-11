@@ -18,6 +18,13 @@ public class EnemyAI_Random : MonoBehaviour
     void Start(){
         gameManager = GameManager.Instance;
         pointGenerations = new List<PointGeneration>(FindObjectsByType<PointGeneration>(FindObjectsSortMode.None));
+
+        StartCoroutine(aiAction());
+    }
+
+    void updateFactionsLists(){
+        pointGenerationsPlayer.Clear();
+        pointGenerationsEnemy.Clear();
         foreach (var point in pointGenerations){
             if (point.fraction == Fraction.Player || point.fraction == Fraction.Neutral){
                 pointGenerationsPlayer.Add(point);
@@ -26,13 +33,13 @@ public class EnemyAI_Random : MonoBehaviour
                 pointGenerationsEnemy.Add(point);
             }
         }
-        StartCoroutine(aiAction());
     }
 
 
     IEnumerator aiAction(){
         while (true){
             yield return new WaitForSeconds(aiActionTime);
+            updateFactionsLists();
             if (pointGenerationsEnemy.Count > 0 && pointGenerationsPlayer.Count > 0){
                 int randomIndex = Random.Range(0, pointGenerationsEnemy.Count);
                 PointGeneration randomEnemyPoi = pointGenerationsEnemy[randomIndex];
