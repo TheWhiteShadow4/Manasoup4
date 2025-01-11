@@ -16,5 +16,6 @@ MonoBehaviour:
   maxPlayerPois: 0
   minEnemyPois: 0
   maxEnemyPois: 0
-  message: An unseren Soldaten kommt keiner vorbei.
+  boboMode: 0
+  message: Durch unsere Skelette kommt nichts durch.
   lines: 1

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b41b4fa5a64c2047ac1c2b2a8c24ab8, type: 3}
-  m_Name: VerschontKeinen
+  m_Name: "Bodenst\xE4ndig"
   m_EditorClassIdentifier: 
   minPlayerPois: 0
   maxPlayerPois: 0
   minEnemyPois: 0
   maxEnemyPois: 0
   boboMode: 0
-  message: 'Verschont niemanden.
-
-    Wir brauchen mehr Soldaten.'
+  message: "Nekromantie ist ein bodenst\xE4ndiges Handwerk.\nUnd manchmal sogar noch
+    drunter."
   lines: 2
