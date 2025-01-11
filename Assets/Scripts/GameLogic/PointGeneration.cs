@@ -27,7 +27,7 @@ public class PointGeneration : SelectableObject
             pointMarker.transform.position = GameManager.Instance.ActiveCamera.WorldToScreenPoint(transform.position);
         }
 
-        CapturePoi(fraction);
+        CapturePoi(fraction, currentPoints);
     }
 
     private void OnEnable()
@@ -45,9 +45,10 @@ public class PointGeneration : SelectableObject
         GameManager.Instance.raidEvent.RaiseEvent(this);
     }
 
-    void CapturePoi(Fraction newFraction)
+    public void CapturePoi(Fraction newFraction, int unitCount)
     {
         fraction = newFraction;
+        currentPoints = unitCount;
         isCounting = newFraction != Fraction.Neutral;
         lastTick = Time.fixedTime;
         MarkPoiForFraction();

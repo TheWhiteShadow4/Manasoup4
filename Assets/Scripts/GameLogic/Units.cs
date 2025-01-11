@@ -6,7 +6,7 @@ public class Units : MonoBehaviour
 {
     public Fraction fraction = Fraction.Neutral;
     public int strength = 5;
-    public float strengthIntervall = 0.5f;
+    public float strengthIntervall = 0.25f;
     public PointGeneration target;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -20,11 +20,8 @@ public class Units : MonoBehaviour
         }
     }
 
-
     private IEnumerator UnitAbrechnung()
     {
-        Debug.Log("jop");
-
         while (strength > 0 && target.currentPoints > 0)
         {
             target.currentPoints -= 1;
@@ -40,9 +37,7 @@ public class Units : MonoBehaviour
 
         if (target.currentPoints <= 0)
         {
-            target.fraction = fraction;
-            target.currentPoints += strength;
-            strength = 0;
+            target.CapturePoi(fraction, strength);
             Destroy(gameObject);
         }          
     }
