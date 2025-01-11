@@ -1,12 +1,11 @@
+using Events;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public GameObject selecetdObject;
-    public UnityEvent<GameObject> onSelect;
+    public SelectionEventChannelSO selectionChangedEvent;
 
     private void Awake()
     {
@@ -17,13 +16,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this);
-        }
-    }
-
-    public void selectNewObject(GameObject newObject){
-        if(selecetdObject != newObject){
-            selecetdObject = newObject;
-            onSelect.Invoke(newObject);
         }
     }
 }

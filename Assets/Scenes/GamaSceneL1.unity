@@ -799,6 +799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 614500432}
   - component: {fileID: 614500433}
+  - component: {fileID: 614500434}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -833,10 +834,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a45dd0d9762424d81bb41a0bad73b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selecetdObject: {fileID: 0}
-  onSelect:
-    m_PersistentCalls:
-      m_Calls: []
+  selectionChangedEvent: {fileID: 11400000, guid: 815b3c02dff52724a8e04f83b1bae065, type: 2}
+--- !u!114 &614500434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614500431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013e0635bc55fb24294488f471c4778a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionChangedEvent: {fileID: 11400000, guid: 815b3c02dff52724a8e04f83b1bae065, type: 2}
 --- !u!1 &763360298
 GameObject:
   m_ObjectHideFlags: 0
