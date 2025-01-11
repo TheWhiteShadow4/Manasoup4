@@ -3,13 +3,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PointGeneration : MonoBehaviour
+public class PointGeneration : SelectableObject
 {
-    public static int PlayerLayer = 6;
-    public static int EnemyLayer = 7;
-    public static int NeutralLayer = 8;
-
-    public Fraction fraction = Fraction.Neutral;
     public int maxPoints = 100;
     public int pointPerSec = 1;
     public float pointInterval = 1f;
@@ -24,6 +19,8 @@ public class PointGeneration : MonoBehaviour
 
     private void Start()
     {
+        selectMarker = gameObject.transform.Find("SelectMarker").gameObject;
+        MarkAsSelected(false);
         if (pointMarker == null)
         {
             pointMarker = Instantiate(pointMarkerPrefab, GameManager.Instance.hud.transform);
@@ -31,6 +28,11 @@ public class PointGeneration : MonoBehaviour
         }
 
         CapturePoi(fraction);
+    }
+
+    public override void Attack()
+    {
+        GameManager.Instance.raidEvent.RaiseEvent(this);
     }
 
     void CapturePoi(Fraction newFraction)
@@ -47,7 +49,7 @@ public class PointGeneration : MonoBehaviour
         if (isCounting && currentPoints < maxPoints && Time.fixedTime > lastTick + pointInterval)
         {
             currentPoints = Mathf.Min(currentPoints + pointPerSec, maxPoints);
-            lastTick = Time.fixedTime;
+            lastTick += pointInterval;
         }
 
         

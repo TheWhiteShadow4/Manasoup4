@@ -16,6 +16,7 @@ public class SelectionHandler : MonoBehaviour
     {
         GameManager.Instance.selectionChangedEvent.OnSelected += OnSelected;
         GameManager.Instance.selectionChangedEvent.OnDeselected += OnDeselected;
+        GameManager.Instance.raidEvent.OnEventRaised += OnRaidStarted;
         selectionRect.enabled = false;
     }
 
@@ -39,6 +40,22 @@ public class SelectionHandler : MonoBehaviour
         selection.Remove(obj);
     }
 
+    void OnRaidStarted(PointGeneration target)
+    {
+        foreach (var sel in selection)
+        {
+            if (sel && sel.TryGetComponent(out PointGeneration poi))
+            {
+                int unitCount = poi.currentPoints / 2;
+                if (unitCount > 0)
+                {
+                    poi.currentPoints -= unitCount;
+                    GameManager.Instance.StartRaid(poi.gameObject, target, unitCount);
+                }
+            }
+        }
+    }
+
     void Update()
     {
         if (Mouse.current.rightButton.wasPressedThisFrame)
@@ -50,7 +67,6 @@ public class SelectionHandler : MonoBehaviour
         {
             dragStart = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             dragStart = dragStart.Floor();
-            Debug.Log("Drag start: " + dragStart);
         }
 
         if (Mouse.current.leftButton.isPressed)
@@ -87,8 +103,8 @@ public class SelectionHandler : MonoBehaviour
             Vector2 size = end - start;
             Vector2 point = start + size / 2;
 
-            Debug.Log("Drag size: " + size);
-            Debug.Log("Drag point: " + point);
+            //Debug.Log("Drag size: " + size);
+            //Debug.Log("Drag point: " + point);
 
             Collider2D[] colliders = Physics2D.OverlapBoxAll(point, size, 0, selectionMask);
             if (colliders.Length > 0)

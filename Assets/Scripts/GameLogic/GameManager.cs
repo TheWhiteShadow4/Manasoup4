@@ -6,10 +6,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public SelectionEventChannelSO selectionChangedEvent;
+    public RaidEventChannelSO raidEvent;
     public GameObject hud;
 
     public GameObject world;
-    public GameObject unitPrefab;
+    public Units unitPrefab;
 
     private Camera activeCamera;
 
@@ -39,11 +40,12 @@ public class GameManager : MonoBehaviour
 
 
   
-    void startRaid(GameObject sourceObject, GameObject targetObject){
-        GameObject newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity);
-        newUnit.transform.SetParent(world.transform);
-        newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject;
-        Debug.Log("Raiding "+targetObject.name);
+    public void StartRaid(GameObject sourceObject, PointGeneration targetObject, int unitCount)
+    {
+        Units newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity, world.transform);
+        newUnit.target = targetObject;
+        newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject.gameObject;
+        Debug.Log("Raiding "+targetObject.name + " mit " + unitCount + " Units");
     }
     
 
