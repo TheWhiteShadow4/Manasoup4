@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6cae4654e6e92d439f439b443b9e6ac
+guid: 54206b89335e85a4096fc8424530a381
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -46,9 +46,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -116,10 +116,10 @@ TextureImporter:
       name: Castle.01_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 10
-        width: 81
-        height: 151
+        x: 24
+        y: 33
+        width: 82
+        height: 122
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
