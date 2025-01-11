@@ -28,9 +28,16 @@ public class SelectableObject : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            if (fraction == Fraction.Player)
+            {
+                Select(true);
+            }
+        }
+        if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
             Attack();
         }
-        if (Mouse.current.rightButton.wasPressedThisFrame) Deselect();
+        //if (Mouse.current.rightButton.wasPressedThisFrame) Deselect();
     }
 
     internal void MarkAsSelected(bool selected)
