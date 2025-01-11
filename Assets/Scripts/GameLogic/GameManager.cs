@@ -54,15 +54,15 @@ public class GameManager : MonoBehaviour
         allPois.Remove(poi);
     }
   
-    public void StartRaid(GameObject sourceObject, PointGeneration targetObject, int unitCount)
+    public void StartRaid(PointGeneration sourceObject, PointGeneration targetObject, int unitCount)
     {
         Units newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity, world.transform);
         var ps = newUnit.GetComponent<UnitMover>().particleEfect.GetComponent<ParticleSystem>();
         var psMain = ps.main;
-        psMain.maxParticles = unitCount*unitCountMultiplier;
+        psMain.maxParticles = unitCount * unitCountMultiplier;
         var emission = ps.emission;
-        emission.rateOverTime = unitCount*unitCountMultiplier;
-        newUnit.fraction = sourceObject.GetComponent<SelectableObject>().fraction;
+        emission.rateOverTime = unitCount * unitCountMultiplier;
+        newUnit.fraction = sourceObject.fraction;
         newUnit.target = targetObject;
         newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject.gameObject;
         Debug.Log("Raiding "+targetObject.name + " mit " + unitCount + " Units");

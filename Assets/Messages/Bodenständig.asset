@@ -17,6 +17,6 @@ MonoBehaviour:
   minEnemyPois: 0
   maxEnemyPois: 0
   boboMode: 0
-  message: "Nekromantie ist ein bodenst\xE4ndiges Handwerk.\nUnd manchmal sogar noch
+  message: "Nekromantie ist ein bodenst\xE4ndiges\nHandwerk. Manchmal sogar noch
     drunter."
   lines: 2

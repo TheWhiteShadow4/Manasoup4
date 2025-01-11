@@ -27,8 +27,6 @@ public class Units : MonoBehaviour
 
         while (strength > 0 && target.currentPoints > 0)
         {
-            // FIXME: Was wenn das Fort schon eingenommen wurde?
-
             target.currentPoints -= 1;
             strength -= 1;
             yield return new WaitForSeconds(strengthIntervall);

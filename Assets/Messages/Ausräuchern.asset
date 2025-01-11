@@ -18,4 +18,4 @@ MonoBehaviour:
   maxEnemyPois: 0
   boboMode: 0
   message: "Wir r\xE4uchern sie aus. Ein Nest nach dem anderen."
-  lines: 1
+  lines: 2

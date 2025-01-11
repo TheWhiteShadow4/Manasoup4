@@ -50,7 +50,7 @@ public class SelectionHandler : MonoBehaviour
                 if (unitCount > 0)
                 {
                     poi.currentPoints -= unitCount;
-                    GameManager.Instance.StartRaid(poi.gameObject, target, unitCount);
+                    GameManager.Instance.StartRaid(poi, target, unitCount);
                 }
             }
         }
