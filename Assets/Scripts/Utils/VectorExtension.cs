@@ -2,6 +2,11 @@
 
 public static class VectorExtension
 {
+    public static Vector2 Floor(this Vector2 v)
+    {
+        return new Vector2(Mathf.Floor(v.x), Mathf.Floor(v.y));
+    }
+
     public static Vector2 Abs(this Vector2 v)
     {
         return new Vector2(Mathf.Abs(v.x), Mathf.Abs(v.y));

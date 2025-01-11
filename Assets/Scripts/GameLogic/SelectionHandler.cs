@@ -49,12 +49,14 @@ public class SelectionHandler : MonoBehaviour
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             dragStart = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            dragStart = dragStart.Floor();
             Debug.Log("Drag start: " + dragStart);
         }
 
         if (Mouse.current.leftButton.isPressed)
         {
             Vector2 dragEnd = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            dragEnd = dragEnd.Floor();
             if (Vector2.Distance(dragStart, dragEnd) >= minDragDist)
             {
                 isDragging = true;
@@ -76,6 +78,7 @@ public class SelectionHandler : MonoBehaviour
             DeselectAll();
             selectionRect.enabled = false;
             Vector2 dragEnd = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            dragEnd = dragEnd.Floor();
 
             Vector2 start = dragStart.MinComponents(dragEnd);
             Vector2 end = dragStart.MaxComponents(dragEnd);
