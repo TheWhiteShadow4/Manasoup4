@@ -5,26 +5,28 @@ public class ObjectSelector : MonoBehaviour
 {
     public bool isSelected;
     GameObject selectMarker;
-    GameManager gameManager;
 
-    void Start(){
-        gameManager = FindFirstObjectByType<GameManager>();
-        gameManager.onSelect.AddListener((go) => onSelectOther(go));
+    void Start()
+    {
+        GameManager.Instance.onSelect.AddListener((go) => onSelectOther(go));
         selectMarker = gameObject.transform.Find("SelectMarker").gameObject;
     }
-    void OnMouseDown(){
+
+    void OnMouseDown()
+    {
         isSelected = true;
-        if(selectMarker) selectMarker.SetActive(true);
-        
+        if (selectMarker) selectMarker.SetActive(true);
+
         Debug.Log("select " + gameObject.name);
-        gameManager.selectNewObject(gameObject);
+        GameManager.Instance.selectNewObject(gameObject);
     }
 
-
-    void onSelectOther(GameObject obj){
-        if (obj != gameObject) {
+    void onSelectOther(GameObject obj)
+    {
+        if (obj != gameObject)
+        {
             isSelected = false;
-            if(selectMarker) selectMarker.SetActive(false);
+            if (selectMarker) selectMarker.SetActive(false);
         }
     }
 }
