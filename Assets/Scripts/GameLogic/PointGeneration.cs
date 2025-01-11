@@ -67,11 +67,11 @@ public class PointGeneration : MonoBehaviour
         switch (fraction)
         {
             case Fraction.Neutral:
-                spriteRenderer.color = Color.white;
+                spriteRenderer.color = Color.grey;
                 gameObject.layer = NeutralLayer;
                 break;
             case Fraction.Player:
-                spriteRenderer.color = Color.blue;
+                spriteRenderer.color = Color.green;
                 gameObject.layer = PlayerLayer;
                 break;
             case Fraction.Enemy:
