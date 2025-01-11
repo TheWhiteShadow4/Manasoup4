@@ -46,7 +46,6 @@ public class PointGeneration : MonoBehaviour
         
         if (isCounting && currentPoints < maxPoints && Time.fixedTime > lastTick + pointInterval)
         {
-            Debug.Log(lastTick);
             currentPoints = Mathf.Min(currentPoints + pointPerSec, maxPoints);
             lastTick = Time.fixedTime;
         }

@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using NavMeshPlus.Components;
 
-namespace NavMeshPlus.Components
-{
 
 public class UnitMover : MonoBehaviour
 {
@@ -49,28 +48,14 @@ public class UnitMover : MonoBehaviour
             areaCostLast = areaCost;
             Debug.Log("Current area cost: "+areaCost);    
         }
-
-
         agent.speed = 10-areaCost*2;
     }
 
     void Update()
     {
-
-        // NavMeshHit hit;
-        // if (NavMesh.SamplePosition(agent.transform.position, out hit, 1.0f, NavMesh.AllAreas)){
-        //     float areaCost = agent.GetAreaCost(hit.mask);
-        //     if (areaCostLast != areaCost){
-        //         areaCostLast = areaCost;
-        //         Debug.Log("Current area cost: " + areaCost);    
-        //     }     
-        // }
-
-
         if (targetObject != lastTargetObject)
         {
             goToTarget(targetObject);
         }
     }
-}
 }

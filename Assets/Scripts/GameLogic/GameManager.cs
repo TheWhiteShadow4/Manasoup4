@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour
     public SelectionEventChannelSO selectionChangedEvent;
     public GameObject hud;
 
+    public GameObject world;
+    public GameObject unitPrefab;
+
     private Camera activeCamera;
 
     public Camera ActiveCamera
@@ -33,4 +36,15 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
     }
+
+
+  
+    void startRaid(GameObject sourceObject, GameObject targetObject){
+        GameObject newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity);
+        newUnit.transform.SetParent(world.transform);
+        newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject;
+        Debug.Log("Raiding "+targetObject.name);
+    }
+    
+
 }
