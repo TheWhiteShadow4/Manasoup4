@@ -26,6 +26,7 @@ public class PointGeneration : MonoBehaviour
             isCounting = false;
         }
 
+        if (!pointsText) return;
         if (currentPoints == 0)
         {
             pointsText.enabled = false;
