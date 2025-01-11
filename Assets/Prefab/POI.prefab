@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 4705129971394834299}
   - component: {fileID: 6188348069327848571}
   - component: {fileID: 4341926504687885410}
+  - component: {fileID: 7526584298405457332}
   m_Layer: 6
   m_Name: POI
   m_TagString: Untagged
@@ -257,3 +258,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159e57bf736e6494aa972660d9c2a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7526584298405457332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615999618243573752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e7631414954bf4bad0534f4343aa6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fraction: 0
+  maxPoints: 100
+  pointPerSec: 1
+  pointInterval: 1
+  currentPoints: 0
+  isCounting: 0
+  spriteRenderer: {fileID: 8209513196387060105}
+  pointMarkerPrefab: {fileID: 6055192735717700028, guid: 4f877d6a7a3cfa442956c386c7d9c390, type: 3}

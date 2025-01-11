@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public SelectionEventChannelSO selectionChangedEvent;
+    public GameObject hud;
 
     private Camera activeCamera;
 
