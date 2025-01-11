@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+namespace NavMeshPlus.Components
+{
+
 public class UnitMover : MonoBehaviour
 {
+
 
     public GameObject targetObject;
     GameObject lastTargetObject;
@@ -22,17 +26,45 @@ public class UnitMover : MonoBehaviour
     // Update is called once per frame
     float areaCostLast = 0;
 
+
+    float getMaxAreaCost(){
+        float areaCost = 0;
+        Collider2D[] colliders = Physics2D.OverlapPointAll(transform.position);
+        foreach (Collider2D collider in colliders){
+            if (collider.gameObject != gameObject) {
+                NavMeshModifier navMeshModifier = collider.gameObject.GetComponent<NavMeshModifier>();
+                if (navMeshModifier != null){
+                    float aC = agent.GetAreaCost(navMeshModifier.area);
+                    if (aC > areaCost){
+                        areaCost = aC;
+                    }
+                }
+            }
+        }
+        return areaCost;
+    }
+    void FixedUpdate(){
+        float areaCost = getMaxAreaCost();
+        if (areaCostLast != areaCost){
+            areaCostLast = areaCost;
+            Debug.Log("Current area cost: "+areaCost);    
+        }
+
+
+        agent.speed = 10-areaCost*2;
+    }
+
     void Update()
     {
 
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(agent.transform.position, out hit, 1.0f, NavMesh.AllAreas)){
-            float areaCost = agent.GetAreaCost(hit.mask);
-            if (areaCostLast != areaCost){
-                areaCostLast = areaCost;
-                Debug.Log("Current area cost: " + areaCost);    
-            }     
-        }
+        // NavMeshHit hit;
+        // if (NavMesh.SamplePosition(agent.transform.position, out hit, 1.0f, NavMesh.AllAreas)){
+        //     float areaCost = agent.GetAreaCost(hit.mask);
+        //     if (areaCostLast != areaCost){
+        //         areaCostLast = areaCost;
+        //         Debug.Log("Current area cost: " + areaCost);    
+        //     }     
+        // }
 
 
         if (targetObject != lastTargetObject)
@@ -40,4 +72,5 @@ public class UnitMover : MonoBehaviour
             goToTarget(targetObject);
         }
     }
+}
 }
