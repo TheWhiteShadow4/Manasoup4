@@ -1,34 +1,37 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Units : MonoBehaviour
 {
     public Fraction fraction = Fraction.Neutral;
-    public int Strength = 5;
-    public float StrengthIntervall = 0.5f;
-    private PointGeneration Target;
+    public int strength = 5;
+    public float strengthIntervall = 0.5f;
+    [NonSerialized] public PointGeneration target;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("hit");
-
-        Target = collision.gameObject.GetComponent<PointGeneration>();
-
-        if (Target.fraction != fraction)
+        if (collision.TryGetComponent(out PointGeneration poi))
         {
-            StartCoroutine(UnitAbrechnung());
-        }
-        else
-        {
-            Target.currentPoints += Strength;
-            Strength = 0;
-        }
+            if (poi != target) return;
 
+            Debug.Log("hit");
+
+            if (target.fraction != fraction)
+            {
+                StartCoroutine(UnitAbrechnung());
+            }
+            else
+            {
+                target.currentPoints += strength;
+                strength = 0;
+            }
+        }
     }
 
     private void Update()
     {
-        if (Strength <= 0)
+        if (strength <= 0)
         {
             Destroy(gameObject);
         }
@@ -38,11 +41,11 @@ public class Units : MonoBehaviour
     {
         Debug.Log("jop");
         
-        while (Strength > 0)
+        while (strength > 0)
         {
-            Target.currentPoints -= 1;
-            Strength -= 1;
-            yield return new WaitForSeconds(StrengthIntervall);
+            target.currentPoints -= 1;
+            strength -= 1;
+            yield return new WaitForSeconds(strengthIntervall);
         }
 
     }

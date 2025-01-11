@@ -6263,10 +6263,6 @@ PrefabInstance:
       propertyPath: raidEvent
       value: 
       objectReference: {fileID: 11400000, guid: 8bdd24e31c607634788f4d6c4e629504, type: 2}
-    - target: {fileID: 1326014215038248800, guid: 7fc0391b83d58c448ba291967e792288, type: 3}
-      propertyPath: unitPrefab
-      value: 
-      objectReference: {fileID: 8485000453139052147, guid: 605b0cb199257024894e9dea84ce4152, type: 3}
     - target: {fileID: 4112062662899539119, guid: 7fc0391b83d58c448ba291967e792288, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -11337,9 +11333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acbb42d22c2a45244b4bf37cddbd582f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fraction: 2
-  Strength: 5
-  StrengthIntervall: 0.5
+  fraction: 1
+  strength: 5
+  strengthIntervall: 0.5
 --- !u!1001 &7975927602557796541
 PrefabInstance:
   m_ObjectHideFlags: 0
