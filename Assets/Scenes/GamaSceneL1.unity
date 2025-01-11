@@ -6255,6 +6255,18 @@ PrefabInstance:
       propertyPath: hud
       value: 
       objectReference: {fileID: 646750634}
+    - target: {fileID: 1326014215038248800, guid: 7fc0391b83d58c448ba291967e792288, type: 3}
+      propertyPath: world
+      value: 
+      objectReference: {fileID: 1631120178}
+    - target: {fileID: 1326014215038248800, guid: 7fc0391b83d58c448ba291967e792288, type: 3}
+      propertyPath: raidEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bdd24e31c607634788f4d6c4e629504, type: 2}
+    - target: {fileID: 1326014215038248800, guid: 7fc0391b83d58c448ba291967e792288, type: 3}
+      propertyPath: unitPrefab
+      value: 
+      objectReference: {fileID: 8485000453139052147, guid: 605b0cb199257024894e9dea84ce4152, type: 3}
     - target: {fileID: 4112062662899539119, guid: 7fc0391b83d58c448ba291967e792288, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -11257,6 +11269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159e57bf736e6494aa972660d9c2a28c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fraction: 0
 --- !u!212 &7581057683832477959
 SpriteRenderer:
   m_ObjectHideFlags: 0

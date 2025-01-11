@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public SelectionEventChannelSO selectionChangedEvent;
+    public RaidEventChannelSO raidEvent;
     public GameObject hud;
 
     public GameObject world;
@@ -39,7 +40,8 @@ public class GameManager : MonoBehaviour
 
 
   
-    void startRaid(GameObject sourceObject, GameObject targetObject){
+    public void StartRaid(GameObject sourceObject, GameObject targetObject, int unitCount)
+    {
         GameObject newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity);
         newUnit.transform.SetParent(world.transform);
         newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject;

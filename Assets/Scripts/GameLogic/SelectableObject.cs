@@ -4,8 +4,14 @@ using UnityEngine.InputSystem;
 
 public class SelectableObject : MonoBehaviour
 {
-    private bool isSelected;
-    private GameObject selectMarker;
+    public static int PlayerLayer = 6;
+    public static int EnemyLayer = 7;
+    public static int NeutralLayer = 8;
+
+    public Fraction fraction = Fraction.Neutral;
+
+    protected bool isSelected;
+    protected GameObject selectMarker;
 
     public bool IsSelected
     {
@@ -20,7 +26,20 @@ public class SelectableObject : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame) Select(!Keyboard.current.shiftKey.isPressed);
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            // Was bin ich überhaupt?
+            if (fraction == Fraction.Player)
+            {
+                Select(!Keyboard.current.shiftKey.isPressed);
+            }
+            else
+            {
+                Attack();
+            }
+
+            
+        }
         if (Mouse.current.rightButton.wasPressedThisFrame) Deselect();
     }
 
@@ -45,4 +64,6 @@ public class SelectableObject : MonoBehaviour
         MarkAsSelected(false);
         GameManager.Instance.selectionChangedEvent.Deselect(this);
     }
+
+    public virtual void Attack() {}
 }

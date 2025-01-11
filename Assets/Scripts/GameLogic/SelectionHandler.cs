@@ -16,6 +16,7 @@ public class SelectionHandler : MonoBehaviour
     {
         GameManager.Instance.selectionChangedEvent.OnSelected += OnSelected;
         GameManager.Instance.selectionChangedEvent.OnDeselected += OnDeselected;
+        GameManager.Instance.raidEvent.OnEventRaised += OnRaidStarted;
         selectionRect.enabled = false;
     }
 
@@ -37,6 +38,22 @@ public class SelectionHandler : MonoBehaviour
     void OnDeselected(SelectableObject obj)
     {
         selection.Remove(obj);
+    }
+
+    void OnRaidStarted(PointGeneration target)
+    {
+        foreach (var sel in selection)
+        {
+            if (sel && sel.TryGetComponent(out PointGeneration poi))
+            {
+                int unitCount = poi.currentPoints / 2;
+                if (unitCount > 0)
+                {
+                    poi.currentPoints -= unitCount;
+                    GameManager.Instance.StartRaid(poi.gameObject, target.gameObject, unitCount);
+                }
+            }
+        }
     }
 
     void Update()

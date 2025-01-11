@@ -271,7 +271,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4705129971394834299}
   - component: {fileID: 6188348069327848571}
-  - component: {fileID: 4341926504687885410}
   - component: {fileID: 7526584298405457332}
   m_Layer: 6
   m_Name: POI
@@ -334,18 +333,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &4341926504687885410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7615999618243573752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159e57bf736e6494aa972660d9c2a28c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7526584298405457332
 MonoBehaviour:
   m_ObjectHideFlags: 0
