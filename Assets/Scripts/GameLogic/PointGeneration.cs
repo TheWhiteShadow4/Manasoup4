@@ -102,6 +102,10 @@ public class PointGeneration : SelectableObject
             cooldownImage.enabled = cooldownTimer > 0;
             cooldownImage.fillAmount = cooldownTimer / raidCooldown;
         }
+        else
+        {
+            cooldownImage.enabled = false;
+        }
 
         if (isCounting && Time.fixedTime > lastTick + pointInterval)
         {
