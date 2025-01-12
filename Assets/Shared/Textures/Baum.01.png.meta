@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 722b5b26cb6402d47a6be4095399930a
+guid: 6ba509f9f010a3d479e7ad7fd9cd56aa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9004775004447881341
-    second: Tower.01_0
+      213: -752061467125024900
+    second: Baum.01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tower.01_0
+      name: Baum.01_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 30
-        width: 74
-        height: 113
+        x: 55
+        y: 22
+        width: 94
+        height: 166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3874191c7dc980380800000000000000
-      internalID: -9004775004447881341
+      spriteID: c77f0ca84142095f0800000000000000
+      internalID: -752061467125024900
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Tower.01_0: -9004775004447881341
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
