@@ -5,6 +5,9 @@ public class PointTracker : MonoBehaviour
 {
     public TextMeshProUGUI armyUnitsValue;
     public TextMeshProUGUI enemyUnitsValue;
+    public GameObject resultat;
+    public GameObject sieg;
+    public GameObject niederlage;
 
     void FixedUpdate()
     {
@@ -23,5 +26,21 @@ public class PointTracker : MonoBehaviour
         });
         armyUnitsValue.text = armyUnits.ToString();
         enemyUnitsValue.text = enemyUnits.ToString();
+
+
+        if (enemyUnits == 0)
+        {
+            Time.timeScale = 0;
+            resultat.SetActive(true);
+            sieg.SetActive(true);
+        }
+
+        if (armyUnits == 0)
+        {
+            Time.timeScale = 0;
+            resultat.SetActive(true);
+            niederlage.SetActive(true);
+        }
+
     }
 }
