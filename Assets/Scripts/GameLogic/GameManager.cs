@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public int unitCountMultiplier = 10;
 
     public GameObject world;
-    public Units unitPrefab;
+    public Units playerUnitPrefab;
+    public Units enemyUnitPrefab;
+    public Units boboUnitPrefab;
 
     private Camera activeCamera;
     [NonSerialized] public List<PointGeneration> allPois;
@@ -58,7 +60,14 @@ public class GameManager : MonoBehaviour
     {
         if (sourceObject == targetObject) return;
 
-        Units newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity, world.transform);
+        Units prefab = null;
+        switch (sourceObject.fraction)
+        {
+            case Fraction.Player: prefab = ModeHandler.Instance.boboMode ? boboUnitPrefab : playerUnitPrefab; break;
+            case Fraction.Enemy: prefab = enemyUnitPrefab; break;
+        }
+
+        Units newUnit = Instantiate(prefab, sourceObject.transform.position, Quaternion.identity, world.transform);
         /*var ps = newUnit.GetComponent<UnitMover>().particleEfect.GetComponent<ParticleSystem>();
         var psMain = ps.main;
         psMain.maxParticles = unitCount * unitCountMultiplier;

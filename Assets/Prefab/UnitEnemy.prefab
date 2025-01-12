@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 7739045701726174205}
   - component: {fileID: 5224949615429895416}
   m_Layer: 9
-  m_Name: Unit
+  m_Name: UnitEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
