@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3941a7af3426854ab2c6411dc3f2f28
+guid: bf65c702ba9d1f247af29e2f4e5097f6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2298855801069288688
-    second: SelectionRing_0
+      213: -1012497541751900188
+    second: Enemy.Skeleton_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SelectionRing_0
+      name: Enemy.Skeleton_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 6
+        y: 37
+        width: 103
+        height: 97
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fcb494db2d27ef10800000000000000
-      internalID: 2298855801069288688
+      spriteID: 4e7fbe7a9d2e2f1f0800000000000000
+      internalID: -1012497541751900188
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      SelectionRing_0: 2298855801069288688
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

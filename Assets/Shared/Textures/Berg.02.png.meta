@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 37181090a1cb6a34db9435ccf6a0a991
+guid: 1e9573ef14762924c9e8f1c965e06e57
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Berg.02_0: 6696038221872149365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

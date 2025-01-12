@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b7ce01072fba3d40b568243b8209d8d
+guid: 444a713495dc79d49b23d80a972eb2fd
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Baum.02_0: 6125920420014169530
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

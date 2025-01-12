@@ -331,7 +331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fraction: 1
   strength: 5
-  tickIntervall: 0.25
+  tickIntervall: 0.1
   target: {fileID: 0}
   spawnSound: {fileID: 8300000, guid: 0dd84c983e25d624b89433e1dc97a892, type: 3}
 --- !u!50 &5224949615429895416
