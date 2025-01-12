@@ -974,6 +974,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757710967}
   - component: {fileID: 757710968}
+  - component: {fileID: 757710969}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1017,6 +1018,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c75339cd5afc2a04c90c5435aca3b11d, type: 3}
   - {fileID: 8300000, guid: 2c53873dac2839242a8cf62a08bb4cbb, type: 3}
   - {fileID: 8300000, guid: ed16ed009be4a7848b69d4cb28f7c7e2, type: 3}
+--- !u!114 &757710969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 757710966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199d3f31aade4ce46acc116d48f6cba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boboMode: 0
 --- !u!1 &844154314
 GameObject:
   m_ObjectHideFlags: 0
@@ -4086,7 +4100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656ae05185752564ba9b8a7d111ef222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiActionTime: 10
+  aiActionTimeMin: 2
+  aiActionTimeCurrent: 8
+  aiActionTimeScale: 0.5
 --- !u!224 &2070199901 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8918189409764757511, guid: b06fc45c5b65a684b9241d00f4101618, type: 3}
