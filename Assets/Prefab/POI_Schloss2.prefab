@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4726326731234220750, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5196764222927883875, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
       propertyPath: m_Size.x
       value: 1.93
@@ -90,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7615999618243573752, guid: 4a2c4879a10d9fb49872118375aabf44, type: 3}
       propertyPath: m_Name
-      value: POI (1) Variant
+      value: POI_Schloss2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
