@@ -2412,9 +2412,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1129139130}
-  m_Father: {fileID: 1103225647}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4176,15 +4175,15 @@ PrefabInstance:
     - target: {fileID: 3073101896871947507, guid: 221c329bb0794a0478c4aba76f5dd4e4, type: 3}
       propertyPath: sieg
       value: 
-      objectReference: {fileID: 784411468}
+      objectReference: {fileID: 0}
     - target: {fileID: 3073101896871947507, guid: 221c329bb0794a0478c4aba76f5dd4e4, type: 3}
       propertyPath: resultat
       value: 
-      objectReference: {fileID: 1103225646}
+      objectReference: {fileID: 0}
     - target: {fileID: 3073101896871947507, guid: 221c329bb0794a0478c4aba76f5dd4e4, type: 3}
       propertyPath: niederlage
       value: 
-      objectReference: {fileID: 1173822198}
+      objectReference: {fileID: 0}
     - target: {fileID: 4082794949049635378, guid: 221c329bb0794a0478c4aba76f5dd4e4, type: 3}
       propertyPath: m_Layer
       value: 5
@@ -4990,7 +4989,6 @@ RectTransform:
   - {fileID: 1079988946}
   - {fileID: 455136302}
   - {fileID: 110572689}
-  - {fileID: 1103225647}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5427,7 +5425,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1173822199}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -7926,7 +7924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656ae05185752564ba9b8a7d111ef222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiActionTime: 3
+  aiActionTimeMin: 2
   aiActionTimeCurrent: 8
   aiActionTimeScale: 0.2
 --- !u!224 &2070199901 stripped
@@ -8856,3 +8854,5 @@ SceneRoots:
   - {fileID: 363541772}
   - {fileID: 1919900506}
   - {fileID: 1038233339}
+  - {fileID: 602317969}
+  - {fileID: 1402780516}
