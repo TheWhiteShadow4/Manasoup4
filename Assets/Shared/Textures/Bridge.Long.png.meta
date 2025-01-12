@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 200c02befd65adc439a8ae4c7b22b381
+guid: 14ee8144de8e2a54c90846d9a47373fc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8681031760902013917
-    second: Enemy.Skeleton.New_0
+      213: 920262595169955894
+    second: Bridge.Long_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy.Skeleton.New_0
+      name: Bridge.Long_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 54
-        width: 74
-        height: 80
+        x: 2
+        y: 0
+        width: 58
+        height: 158
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32c3d878b97c68780800000000000000
-      internalID: -8681031760902013917
+      spriteID: 6303f2d54fd65cc00800000000000000
+      internalID: 920262595169955894
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Enemy.Skeleton.New_0: -8681031760902013917
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
