@@ -10,7 +10,7 @@ public class UnitMover : MonoBehaviour
     public VisualEffect effect;
     public float effectUnitSpeed = 8;
     public float effectLookAhead = 2;
-
+    public int opticalUnitMuliplier = 1;
     private GameObject lastTargetObject;
     private NavMeshAgent agent;
     private Units units;
@@ -73,7 +73,7 @@ public class UnitMover : MonoBehaviour
         Vector3 direction = vec.normalized;
 
         effect.SetVector3("Attractor", transform.position + direction * Mathf.Min(effectLookAhead, dist));
-        effect.SetInt("LeftUnits", units.strength);
+        effect.SetInt("LeftUnits", units.strength*opticalUnitMuliplier);
 
         //if (agent.velocity != Vector3.zero) particleEfect.transform.rotation = Quaternion.LookRotation(agent.velocity);
     }
