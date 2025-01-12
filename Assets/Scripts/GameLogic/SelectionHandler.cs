@@ -76,7 +76,7 @@ public class SelectionHandler : MonoBehaviour
         }
         else if (Mouse.current.rightButton.wasPressedThisFrame)
         {
-            collider = Physics2D.OverlapPoint(mousePosition, enemySelectionMask);
+            collider = Physics2D.OverlapPoint(mousePosition, selectionMask | enemySelectionMask);
             if (collider != null && collider.TryGetComponent(out selectable))
             {
                 selectable.Attack();
