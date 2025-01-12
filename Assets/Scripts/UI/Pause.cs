@@ -16,7 +16,6 @@ public class Pause : MonoBehaviour
         Time.timeScale = 0;
         Menü.SetActive(true);
         knopf.SetActive(false);
-        gamemanager.SetActive(false);
     }
 
     public void weitermachen()
@@ -24,7 +23,6 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         Menü.SetActive(false);
         knopf.SetActive(true);
-        gamemanager.SetActive(true);    
     }
 
     public void optionendrücken()
