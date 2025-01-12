@@ -51,7 +51,9 @@ MonoBehaviour:
   hud: {fileID: 0}
   unitCountMultiplier: 10
   world: {fileID: 0}
-  unitPrefab: {fileID: 7739045701726174205, guid: 605b0cb199257024894e9dea84ce4152, type: 3}
+  playerUnitPrefab: {fileID: 7739045701726174205, guid: 605b0cb199257024894e9dea84ce4152, type: 3}
+  enemyUnitPrefab: {fileID: 7739045701726174205, guid: bda262292a133f141bdf59b91b985c0d, type: 3}
+  boboUnitPrefab: {fileID: 7739045701726174205, guid: c71956ef3e30bd544a56e6db0b9937ef, type: 3}
 --- !u!114 &7160037208181903155
 MonoBehaviour:
   m_ObjectHideFlags: 0

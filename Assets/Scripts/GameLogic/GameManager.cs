@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         {
             case Fraction.Player: prefab = ModeHandler.Instance.boboMode ? boboUnitPrefab : playerUnitPrefab; break;
             case Fraction.Enemy: prefab = enemyUnitPrefab; break;
+            default: Debug.LogError("Kann Raid nicht von Neutral starten! " + sourceObject.name); return;
         }
 
         Units newUnit = Instantiate(prefab, sourceObject.transform.position, Quaternion.identity, world.transform);

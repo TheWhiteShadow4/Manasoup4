@@ -4977,7 +4977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6940837012134757327, guid: 221c329bb0794a0478c4aba76f5dd4e4, type: 3}
       propertyPath: testMessageInterval
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7369587061924183715, guid: 221c329bb0794a0478c4aba76f5dd4e4, type: 3}
       propertyPath: m_Layer

@@ -3832,7 +3832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656ae05185752564ba9b8a7d111ef222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiActionTimeMin: 2
+  aiActionTimeMin: 3
   aiActionTimeCurrent: 8
   aiActionTimeScale: 0.5
 --- !u!224 &2070199901 stripped
