@@ -103,7 +103,7 @@ public class PointGeneration : SelectableObject
             cooldownImage.fillAmount = cooldownTimer / raidCooldown;
         }
 
-        if (isCounting && currentPoints < maxPoints && Time.fixedTime > lastTick + pointInterval)
+        if (isCounting && Time.fixedTime > lastTick + pointInterval)
         {
             currentPoints = Mathf.Min(currentPoints + 1, maxPoints);
             lastTick += pointInterval;
