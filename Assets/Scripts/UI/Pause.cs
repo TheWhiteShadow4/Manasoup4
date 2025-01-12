@@ -50,4 +50,10 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("GamaSceneL1");
     }
+
+    public void tutorialbeendet()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GamaSceneL1");
+    }
 }
