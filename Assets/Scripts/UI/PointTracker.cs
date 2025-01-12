@@ -1,5 +1,7 @@
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PointTracker : MonoBehaviour
 {
@@ -9,22 +11,38 @@ public class PointTracker : MonoBehaviour
     public GameObject sieg;
     public GameObject niederlage;
 
+    public UnityAction OnPlayerChanged;
+    public UnityAction OnEnemyChanged;
+
+    [NonSerialized] public int playerUnits = -1;
+    [NonSerialized] public int enemyUnits = -1;
+
     void FixedUpdate()
     {
-        int armyUnits = 0;
-        int enemyUnits = 0;
+        int pUnits = 0;
+        int eUnits = 0;
         GameManager.Instance.allPois.ForEach(poi =>
         {
             if (poi.fraction == Fraction.Player)
             {
-                armyUnits += poi.currentPoints;
+                pUnits += poi.currentPoints;
             }
             else if (poi.fraction == Fraction.Enemy)
             {
-                enemyUnits += poi.currentPoints;
+                eUnits += poi.currentPoints;
             }
         });
-        armyUnitsValue.text = armyUnits.ToString();
+        if (playerUnits != -1 && playerUnits != pUnits)
+        {
+            OnPlayerChanged?.Invoke();
+        }
+        if (enemyUnits != -1 && enemyUnits != eUnits)
+        {
+            OnPlayerChanged?.Invoke();
+        }
+        playerUnits = pUnits;
+        enemyUnits = eUnits;
+        armyUnitsValue.text = playerUnits.ToString();
         enemyUnitsValue.text = enemyUnits.ToString();
 
 
@@ -33,14 +51,15 @@ public class PointTracker : MonoBehaviour
             Time.timeScale = 0;
             resultat.SetActive(true);
             sieg.SetActive(true);
+            enabled = false;
         }
 
-        if (armyUnits == 0)
+        if (playerUnits == 0)
         {
             Time.timeScale = 0;
             resultat.SetActive(true);
             niederlage.SetActive(true);
+            enabled = false;
         }
-
     }
 }
