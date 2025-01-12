@@ -57,15 +57,16 @@ public class GameManager : MonoBehaviour
     public void StartRaid(PointGeneration sourceObject, PointGeneration targetObject, int unitCount)
     {
         Units newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity, world.transform);
-        var ps = newUnit.GetComponent<UnitMover>().particleEfect.GetComponent<ParticleSystem>();
+        /*var ps = newUnit.GetComponent<UnitMover>().particleEfect.GetComponent<ParticleSystem>();
         var psMain = ps.main;
         psMain.maxParticles = unitCount * unitCountMultiplier;
         var emission = ps.emission;
-        emission.rateOverTime = unitCount * unitCountMultiplier;
+        emission.rateOverTime = unitCount * unitCountMultiplier;*/
         newUnit.fraction = sourceObject.fraction;
         newUnit.target = targetObject;
         newUnit.strength = unitCount;
         newUnit.transform.GetComponent<UnitMover>().targetObject = targetObject.gameObject;
+        //newUnit.Init();
         Debug.Log("Raiding "+targetObject.name + " mit " + unitCount + " Units");
     }
 }
