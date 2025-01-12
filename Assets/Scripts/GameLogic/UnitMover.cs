@@ -23,9 +23,9 @@ public class UnitMover : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        effect.SetInt("Units", units.strength);
+        effect.SetInt("Units", units.strength*opticalUnitMuliplier);
         effect.SetInt("LeftUnits", units.strength*opticalUnitMuliplier);
-        effect.SetFloat("Speed", effectUnitSpeed*opticalUnitMuliplier);
+        effect.SetFloat("Speed", effectUnitSpeed);
     }
 
     void goToTarget(GameObject targetObject)
@@ -73,7 +73,7 @@ public class UnitMover : MonoBehaviour
         Vector3 direction = vec.normalized;
 
         effect.SetVector3("Attractor", transform.position + direction * Mathf.Min(effectLookAhead, dist));
-        effect.SetInt("LeftUnits", units.strength);
+        effect.SetInt("LeftUnits", units.strength*opticalUnitMuliplier);
 
         //if (agent.velocity != Vector3.zero) particleEfect.transform.rotation = Quaternion.LookRotation(agent.velocity);
     }
