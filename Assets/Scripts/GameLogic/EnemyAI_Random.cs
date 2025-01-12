@@ -45,8 +45,9 @@ public class EnemyAI_Random : MonoBehaviour
                 PointGeneration randomEnemyPoi = pointGenerationsEnemy[randomIndex];
                 int randomIndex2 = Random.Range(0, pointGenerationsPlayer.Count);
                 PointGeneration randomPlayerPoi = pointGenerationsPlayer[randomIndex2];
-                randomEnemyPoi.currentPoints -= randomEnemyPoi.currentPoints/2;
-                gameManager.StartRaid(randomEnemyPoi, randomPlayerPoi, randomEnemyPoi.currentPoints/2);
+                int usedRaidSize = randomEnemyPoi.currentPoints / 2;
+                randomEnemyPoi.currentPoints -= usedRaidSize;
+                gameManager.StartRaid(randomEnemyPoi, randomPlayerPoi, usedRaidSize);
             }
         }
     }
