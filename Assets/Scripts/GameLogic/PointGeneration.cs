@@ -86,6 +86,8 @@ public class PointGeneration : SelectableObject
             GameObject effect = Instantiate(enemyCaptureEffect, transform.position, Quaternion.identity);
             Destroy(effect, 2f);
         }
+        cooldownTimer = 0;
+        cooldownImage.enabled = true;
         currentPoints = unitCount;
         isCounting = newFraction != Fraction.Neutral;
         lastTick = Time.fixedTime;

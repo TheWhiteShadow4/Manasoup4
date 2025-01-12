@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
   
     public void StartRaid(PointGeneration sourceObject, PointGeneration targetObject, int unitCount)
     {
+        if (sourceObject == targetObject) return;
+
         Units newUnit = Instantiate(unitPrefab, sourceObject.transform.position, Quaternion.identity, world.transform);
         /*var ps = newUnit.GetComponent<UnitMover>().particleEfect.GetComponent<ParticleSystem>();
         var psMain = ps.main;
