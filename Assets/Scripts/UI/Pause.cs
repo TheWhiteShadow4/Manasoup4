@@ -44,4 +44,10 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("TitleScene");
     }
+
+    public void Neustart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("GamaSceneL1");
+    }
 }
