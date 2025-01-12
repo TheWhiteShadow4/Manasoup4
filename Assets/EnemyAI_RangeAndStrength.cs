@@ -10,7 +10,9 @@ public class EnemyAI_RangeAndStrength : MonoBehaviour
     List<PointGeneration> pointGenerationsPlayer = new List<PointGeneration>();
     List<PointGeneration> pointGenerationsEnemy = new List<PointGeneration>();
 
-    public float aiActionTime = 10f;
+    public float aiActionTimeMin = 2f;
+    public float aiActionTimeCurrent = 8f;
+    public float aiActionTimeScale = 0.5f;
 
     GameManager gameManager;
 
@@ -20,6 +22,7 @@ public class EnemyAI_RangeAndStrength : MonoBehaviour
         pointGenerations = new List<PointGeneration>(FindObjectsByType<PointGeneration>(FindObjectsSortMode.None));
 
         StartCoroutine(aiAction());
+        StartCoroutine(scaleTimer());
     }
 
     void updateFactionsLists(){
@@ -35,10 +38,21 @@ public class EnemyAI_RangeAndStrength : MonoBehaviour
         }
     }
 
+    IEnumerator scaleTimer(){
+        while (true){
+            yield return new WaitForSeconds(10);
+            aiActionTimeCurrent -= aiActionTimeScale; 
+            if (aiActionTimeCurrent < aiActionTimeMin){
+                aiActionTimeCurrent = aiActionTimeMin;
+                break;
+            } 
+        }
+    }
+
 
     IEnumerator aiAction(){
         while (true){
-            yield return new WaitForSeconds(aiActionTime);
+            yield return new WaitForSeconds(aiActionTimeCurrent);
             updateFactionsLists();
             if (pointGenerationsEnemy.Count > 0 && pointGenerationsPlayer.Count > 0){
                 //get pointGenerationsPlayer with the lowest currentPoints
