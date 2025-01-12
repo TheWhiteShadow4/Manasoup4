@@ -22,45 +22,25 @@ public class ToastManager : MonoBehaviour
 
     private void AddTestMessage()
     {
-        AddMessage(testMessages[testMessageIndex]);
+        MessageSO next = testMessages[testMessageIndex];
+        while (!CanDisplayMessage(next))
+        {
+            testMessageIndex = (testMessageIndex + 1) % testMessages.Length;
+            next = testMessages[testMessageIndex];
+        }
+        AddMessage(next);
         testMessageIndex = (testMessageIndex + 1) % testMessages.Length;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private bool CanDisplayMessage(MessageSO msg)
     {
-        /*float offset = 0;
-        for (int i = messages.Count - 1; i >= 0; i--)
-        {
-            var toast = messages[i];
-            toast.lifeTime -= Time.deltaTime;
-            if (toast.lifeTime <= 0)
-            {
-                messages.RemoveAt(i);
-                Destroy(toast.gameObject);
-                offset += toastSpacing;
-            }
-        }*/
-        /*if (offset > 0)
-        {
-            for (int i = 0; i < messages.Count; i++)
-            {
-                var toast = messages[i];
-                var pos = toast.transform.position;
-                pos.y -= offset;
-                toast.transform.position = pos;
-            }
-        }*/
+        return !msg.boboMode || ModeHandler.Instance.boboMode;
     }
 
     public void AddMessage(MessageSO msg)
     {
         ToastMessage toast = Instantiate(toastMessagePrefab, transform);
-        /*var pos = toast.transform.position;
-        pos.y -= messages.Count * toastSpacing;
-        toast.transform.position = pos;*/
         toast.Init(msg);
-        //messages.Add(toast);
     }
 
     static void Shuffle<T>(T[] array)
