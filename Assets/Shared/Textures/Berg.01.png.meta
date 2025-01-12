@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 722b5b26cb6402d47a6be4095399930a
+guid: 856dbcedb8230854a8ce9a97a88c6f3e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9004775004447881341
-    second: Tower.01_0
+      213: -5925766344100903745
+    second: Berg.01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tower.01_0
+      name: Berg.01_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 30
-        width: 74
-        height: 113
+        x: 10
+        y: 35
+        width: 168
+        height: 125
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3874191c7dc980380800000000000000
-      internalID: -9004775004447881341
+      spriteID: fb486e5f7e273cda0800000000000000
+      internalID: -5925766344100903745
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Tower.01_0: -9004775004447881341
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
