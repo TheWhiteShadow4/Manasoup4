@@ -9,18 +9,24 @@ public class Units : MonoBehaviour
 
     private float lastTick;
 
+    Collider2D targetCollider = null;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         OnCollisionTick(collision);
         lastTick = Time.fixedTime;
+        if (collision.TryGetComponent(out PointGeneration poi) && poi == target){
+            targetCollider = collision;
+        }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Time.fixedTime >= lastTick + tickIntervall)
-        {
-            OnCollisionTick(collision);
-            lastTick += tickIntervall;
+
+    void FixedUpdate(){
+        if (targetCollider){
+            if (Time.fixedTime >= lastTick + tickIntervall){
+                OnCollisionTick(targetCollider);
+                lastTick += tickIntervall;
+            }
         }
     }
 

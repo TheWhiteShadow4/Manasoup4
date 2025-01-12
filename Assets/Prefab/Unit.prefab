@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fraction: 1
   strength: 5
-  strengthIntervall: 0.5
+  tickIntervall: 0.1
   target: {fileID: 0}
 --- !u!50 &5224949615429895416
 Rigidbody2D:

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 722b5b26cb6402d47a6be4095399930a
+guid: 154a226a09e8144428664c077657cda9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9004775004447881341
-    second: Tower.01_0
+      213: 3003187538919092771
+    second: "Ho\u0308hle (1)_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tower.01_0
+      name: "Ho\u0308hle (1)_0"
       rect:
         serializedVersion: 2
-        x: 31
-        y: 30
-        width: 74
-        height: 113
+        x: 27
+        y: 34
+        width: 158
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3874191c7dc980380800000000000000
-      internalID: -9004775004447881341
+      spriteID: 322f623b7277da920800000000000000
+      internalID: 3003187538919092771
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Tower.01_0: -9004775004447881341
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
