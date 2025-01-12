@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3941a7af3426854ab2c6411dc3f2f28
+guid: 978183dab0a692f47861b477136f96cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2298855801069288688
-    second: SelectionRing_0
+      213: -7584572149754839369
+    second: UnscharferKreis_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SelectionRing_0
+      name: UnscharferKreis_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 128
+        x: 18
+        y: 17
+        width: 221
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0fcb494db2d27ef10800000000000000
-      internalID: 2298855801069288688
+      spriteID: 7beba8880df2eb690800000000000000
+      internalID: -7584572149754839369
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      SelectionRing_0: 2298855801069288688
+      UnscharferKreis_0: -7584572149754839369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
