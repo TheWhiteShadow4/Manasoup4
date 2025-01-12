@@ -23,8 +23,8 @@ public class UnitMover : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        effect.SetInt("Units", units.strength);
-        effect.SetInt("LeftUnits", units.strength);
+        effect.SetInt("Units", units.strength*opticalUnitMuliplier);
+        effect.SetInt("LeftUnits", units.strength*opticalUnitMuliplier);
         effect.SetFloat("Speed", effectUnitSpeed);
     }
 
