@@ -171,7 +171,7 @@ SpriteRenderer:
   m_Size: {x: 1.29, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3562701360654927280
@@ -347,12 +347,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fraction: 0
   maxPoints: 100
-  pointPerSec: 1
   pointInterval: 1
   currentPoints: 0
+  raidCooldown: 3
   isCounting: 0
+  playerCaptureSound: {fileID: 8300000, guid: 94f4518c370959345b03a47263f5ebbb, type: 3}
+  enemyCaptureSound: {fileID: 8300000, guid: 2760461c676bcef4f8fc79ab1a456ba2, type: 3}
+  playerCaptureEffect: {fileID: 5970247970501586389, guid: dccd8e393d3d9be4caaae39071d6d362, type: 3}
+  enemyCaptureEffect: {fileID: 6846789283807188289, guid: f629bc1f06f125047aab6bac148aaae7, type: 3}
   spriteRenderer: {fileID: 2806277891701471926}
   pointMarkerPrefab: {fileID: 6055192735717700028, guid: 4f877d6a7a3cfa442956c386c7d9c390, type: 3}
+  cooldownPrefab: {fileID: 5103450174350994855, guid: a4a9165acae92b846b3d1c56fbf61e03, type: 3}
 --- !u!1 &8618332125902683672
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +443,6 @@ SpriteRenderer:
   m_Size: {x: 1.29, y: 1.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

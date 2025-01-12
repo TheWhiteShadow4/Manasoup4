@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5729474773511604095}
   - component: {fileID: 2007511853823288230}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: SelectMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 3913681366633250344}
   - component: {fileID: 7739045701726174205}
   - component: {fileID: 5224949615429895416}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Unit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -211,8 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fraction: 1
   strength: 5
-  strengthIntervall: 0.5
+  tickIntervall: 0.25
   target: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 0dd84c983e25d624b89433e1dc97a892, type: 3}
 --- !u!50 &5224949615429895416
 Rigidbody2D:
   serializedVersion: 5
@@ -251,7 +252,7 @@ GameObject:
   - component: {fileID: 1562727100380126544}
   - component: {fileID: 2988902628724286419}
   - component: {fileID: 3995462191812133394}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ZombiHord
   m_TagString: Untagged
   m_Icon: {fileID: 0}

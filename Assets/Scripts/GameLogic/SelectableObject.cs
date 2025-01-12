@@ -24,21 +24,26 @@ public class SelectableObject : MonoBehaviour
         MarkAsSelected(false);
     }
 
-    void OnMouseOver()
+    /*private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (fraction == Fraction.Player)
+            var collider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), selectionMask);
+            if (collider != null && fraction == Fraction.Player)
             {
                 Select(true);
             }
         }
         if (Mouse.current.rightButton.wasPressedThisFrame)
         {
-            Attack();
+            var collider = Physics2D.OverlapPoint(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()), selectionMask);
+            if (collider != null)
+            {
+                Attack();
+            }
         }
         //if (Mouse.current.rightButton.wasPressedThisFrame) Deselect();
-    }
+    }*/
 
     internal void MarkAsSelected(bool selected)
     {

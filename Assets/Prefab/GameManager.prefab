@@ -49,6 +49,7 @@ MonoBehaviour:
   selectionChangedEvent: {fileID: 11400000, guid: 815b3c02dff52724a8e04f83b1bae065, type: 2}
   raidEvent: {fileID: 0}
   hud: {fileID: 0}
+  unitCountMultiplier: 10
   world: {fileID: 0}
   unitPrefab: {fileID: 7739045701726174205, guid: 605b0cb199257024894e9dea84ce4152, type: 3}
 --- !u!114 &7160037208181903155
@@ -67,6 +68,9 @@ MonoBehaviour:
   selectionMask:
     serializedVersion: 2
     m_Bits: 64
+  enemySelectionMask:
+    serializedVersion: 2
+    m_Bits: 384
   selectionRect: {fileID: 996027000396957907}
 --- !u!1 &6996109571159901683
 GameObject:

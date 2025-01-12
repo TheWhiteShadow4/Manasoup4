@@ -6,27 +6,61 @@ public class Units : MonoBehaviour
     public int strength = 5;
     public float tickIntervall = 0.25f;
     public PointGeneration target;
+    public AudioClip spawnSound;
 
+    private bool hasGoalReached = false;
+    private bool isInterrupted = false;
     private float lastTick;
+
+    private void Start()
+    {
+        AudioManager.Instance.PlaySound(spawnSound);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        OnCollisionTick(collision);
-        lastTick = Time.fixedTime;
+        if (collision.TryGetComponent(out PointGeneration poi) && poi == target)
+        {
+            hasGoalReached = true;
+            OnPOIAttackStep();
+            lastTick = Time.fixedTime;
+        }
+        else if (collision.TryGetComponent(out Units enemies))
+        {
+            isInterrupted = true;
+            OnUnitInteruptStep(enemies);
+            lastTick = Time.fixedTime;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Time.fixedTime >= lastTick + tickIntervall)
+        if (collision.TryGetComponent(out Units enemies))
         {
-            OnCollisionTick(collision);
-            lastTick += tickIntervall;
+            if (Time.fixedTime >= lastTick + tickIntervall)
+            {
+                OnUnitInteruptStep(enemies);
+                lastTick += tickIntervall;
+            }
         }
     }
 
-    private void OnCollisionTick(Collider2D collision)
+    private void FixedUpdate()
     {
-        if (collision.TryGetComponent(out PointGeneration poi) && poi == target)
+        if (hasGoalReached && Time.fixedTime >= lastTick + tickIntervall)
+        {
+            OnPOIAttackStep();
+            lastTick += tickIntervall;
+        }
+        if (strength <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnPOIAttackStep()
+    {
+        if (strength > 0)
         {
             if (fraction == target.fraction)
             {
@@ -47,47 +81,45 @@ public class Units : MonoBehaviour
                 }
             }
         }
-        else if (collision.TryGetComponent(out Units enemies))
-        {
-            if (fraction != target.fraction && enemies.strength > 0)
-            {
-                enemies.strength -= 1;
-                strength -= 1;
-            }
-            else
-            {
-                // Merge?
-            }
-        }
-        if (strength <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 
-    /*private IEnumerator UnitAbrechnung()
+
+    private void OnUnitInteruptStep(Units enemies)
     {
-        while (strength > 0)
+        if (fraction != target.fraction && strength > 0 && enemies.strength > 0)
         {
-            if (fraction == target.fraction)
+            enemies.strength -= 1;
+            strength -= 1;
+        }
+        else
+        {
+            // Merge?
+        }
+    }
+    
+    /*private IEnumerator UnitAbrechnung()
+        {
+            while (strength > 0)
             {
-                target.currentPoints += strength;
-                yield return null;
-            }
-            else
-            {
-                if (target.currentPoints <= 0)
+                if (fraction == target.fraction)
                 {
-                    target.CapturePoi(fraction, strength);
+                    target.currentPoints += strength;
+                    yield return null;
                 }
                 else
                 {
-                    target.currentPoints -= 1;
-                    strength -= 1;
-                    yield return new WaitForSeconds(tickIntervall);
+                    if (target.currentPoints <= 0)
+                    {
+                        target.CapturePoi(fraction, strength);
+                    }
+                    else
+                    {
+                        target.currentPoints -= 1;
+                        strength -= 1;
+                        yield return new WaitForSeconds(tickIntervall);
+                    }
                 }
             }
-        }
-        Destroy(gameObject);        
-    }*/
-}
+            Destroy(gameObject);        
+        }*/
+    }

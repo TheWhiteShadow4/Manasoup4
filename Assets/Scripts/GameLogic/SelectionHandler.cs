@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class SelectionHandler : MonoBehaviour
 {
     public float minDragDist = 5;
     public LayerMask selectionMask;
+    public LayerMask enemySelectionMask;
     public SpriteRenderer selectionRect;
 
     private readonly List<SelectableObject> selection = new List<SelectableObject>();
@@ -47,10 +49,11 @@ public class SelectionHandler : MonoBehaviour
             if (sel && sel.TryGetComponent(out PointGeneration poi))
             {
                 int unitCount = poi.currentPoints / 2;
-                if (unitCount > 0)
+                if (unitCount > 0 && poi.CanStartRaid())
                 {
                     poi.currentPoints -= unitCount;
                     GameManager.Instance.StartRaid(poi, target, unitCount);
+                    poi.SetRaidCooldown();
                 }
             }
         }
@@ -58,20 +61,35 @@ public class SelectionHandler : MonoBehaviour
 
     void Update()
     {
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-        {
-            DeselectAll();
-        }
-
+        SelectableObject selectable = null;
+        Collider2D collider;
+        Vector3 mousePosition = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            dragStart = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            collider = Physics2D.OverlapPoint(mousePosition, selectionMask);
+            if (collider != null && collider.TryGetComponent(out selectable))
+            {
+                selectable.Select(true);
+            }
+            dragStart = mousePosition;
             dragStart = dragStart.Floor();
+        }
+        else if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            collider = Physics2D.OverlapPoint(mousePosition, enemySelectionMask);
+            if (collider != null && collider.TryGetComponent(out selectable))
+            {
+                selectable.Attack();
+            }
+            else
+            {
+                DeselectAll();
+            }
         }
 
         if (Mouse.current.leftButton.isPressed)
         {
-            Vector2 dragEnd = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 dragEnd = mousePosition;
             dragEnd = dragEnd.Floor();
             if (Vector2.Distance(dragStart, dragEnd) >= minDragDist)
             {
@@ -94,7 +112,7 @@ public class SelectionHandler : MonoBehaviour
             DeselectAll();
             isDragging = false;
             selectionRect.enabled = false;
-            Vector2 dragEnd = GameManager.Instance.ActiveCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 dragEnd = mousePosition;
             dragEnd = dragEnd.Floor();
 
             Vector2 start = dragStart.MinComponents(dragEnd);
