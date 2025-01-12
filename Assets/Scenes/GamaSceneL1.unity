@@ -581,7 +581,7 @@ Transform:
   m_GameObject: {fileID: 535369822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.2, y: -12.7237, z: 0.6820398}
+  m_LocalPosition: {x: 30.2, y: -12.7237, z: 10}
   m_LocalScale: {x: 4.24, y: 68.77815, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1226,8 +1226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -96, y: 66}
-  m_SizeDelta: {x: 184.56433, y: 126.61951}
+  m_AnchoredPosition: {x: -60.645813, y: 37.97528}
+  m_SizeDelta: {x: 113.8558, y: 70.5701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079988947
 MonoBehaviour:
@@ -2143,7 +2143,7 @@ Transform:
   m_GameObject: {fileID: 1493263443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41.8959, y: 32.8, z: 0.6820398}
+  m_LocalPosition: {x: 41.8959, y: 32.8, z: 10}
   m_LocalScale: {x: 22.407999, y: 50, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3136,7 +3136,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Pause menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
