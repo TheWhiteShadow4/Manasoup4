@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public Units boboUnitPrefab;
 
     private Camera activeCamera;
-    [NonSerialized] public List<PointGeneration> allPois;
+    [NonSerialized] public List<Fort> allForts;
 
     public Camera ActiveCamera
     {
@@ -43,20 +43,20 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-        allPois = new List<PointGeneration>();
+        allForts = new List<Fort>();
     }
 
-    public void RegisterPoi(PointGeneration newPoi)
+    public void RegisterPoi(Fort newPoi)
     {
-        allPois.Add(newPoi);
+        allForts.Add(newPoi);
     }
 
-    public void UnregisterPoi(PointGeneration poi)
+    public void UnregisterPoi(Fort poi)
     {
-        allPois.Remove(poi);
+        allForts.Remove(poi);
     }
   
-    public void StartRaid(PointGeneration sourceObject, PointGeneration targetObject, int unitCount)
+    public void StartRaid(Fort sourceObject, Fort targetObject, int unitCount)
     {
         if (sourceObject == targetObject) return;
 

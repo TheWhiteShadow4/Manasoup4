@@ -6,9 +6,9 @@ public class EnemyAI_Random : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    List <PointGeneration> pointGenerations = new List<PointGeneration>();
-    List<PointGeneration> pointGenerationsPlayer = new List<PointGeneration>();
-    List<PointGeneration> pointGenerationsEnemy = new List<PointGeneration>();
+    List <Fort> pointGenerations = new List<Fort>();
+    List<Fort> pointGenerationsPlayer = new List<Fort>();
+    List<Fort> pointGenerationsEnemy = new List<Fort>();
 
     public float aiActionTime = 10f;
 
@@ -17,7 +17,7 @@ public class EnemyAI_Random : MonoBehaviour
     
     void Start(){
         gameManager = GameManager.Instance;
-        pointGenerations = new List<PointGeneration>(FindObjectsByType<PointGeneration>(FindObjectsSortMode.None));
+        pointGenerations = new List<Fort>(FindObjectsByType<Fort>(FindObjectsSortMode.None));
 
         StartCoroutine(aiAction());
     }
@@ -42,9 +42,9 @@ public class EnemyAI_Random : MonoBehaviour
             updateFactionsLists();
             if (pointGenerationsEnemy.Count > 0 && pointGenerationsPlayer.Count > 0){
                 int randomIndex = Random.Range(0, pointGenerationsEnemy.Count);
-                PointGeneration randomEnemyPoi = pointGenerationsEnemy[randomIndex];
+                Fort randomEnemyPoi = pointGenerationsEnemy[randomIndex];
                 int randomIndex2 = Random.Range(0, pointGenerationsPlayer.Count);
-                PointGeneration randomPlayerPoi = pointGenerationsPlayer[randomIndex2];
+                Fort randomPlayerPoi = pointGenerationsPlayer[randomIndex2];
                 int usedRaidSize = randomEnemyPoi.currentPoints / 2;
                 randomEnemyPoi.currentPoints -= usedRaidSize;
                 gameManager.StartRaid(randomEnemyPoi, randomPlayerPoi, usedRaidSize);

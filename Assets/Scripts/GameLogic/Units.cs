@@ -5,7 +5,7 @@ public class Units : MonoBehaviour
     public Fraction fraction = Fraction.Neutral;
     public int strength = 5;
     public float tickIntervall = 0.25f;
-    public PointGeneration target;
+    public Fort target;
     public AudioClip spawnSound;
 
     private bool hasGoalReached = false;
@@ -19,7 +19,7 @@ public class Units : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PointGeneration poi) && poi == target)
+        if (collision.TryGetComponent(out Fort poi) && poi == target)
         {
             hasGoalReached = true;
             OnPOIAttackStep();

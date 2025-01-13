@@ -9,9 +9,9 @@ namespace Events
     [CreateAssetMenu(menuName = "Events/Raid Event Channel")]
 	public class RaidEventChannelSO : ScriptableObject
 	{
-		public UnityAction<PointGeneration> OnEventRaised;
+		public UnityAction<Fort> OnEventRaised;
 
-        public void RaiseEvent(PointGeneration value)
+        public void RaiseEvent(Fort value)
 		{
             OnEventRaised?.Invoke(value);
 		}

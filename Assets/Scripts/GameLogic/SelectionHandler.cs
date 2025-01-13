@@ -42,11 +42,11 @@ public class SelectionHandler : MonoBehaviour
         selection.Remove(obj);
     }
 
-    void OnRaidStarted(PointGeneration target)
+    void OnRaidStarted(Fort target)
     {
         foreach (var sel in selection)
         {
-            if (sel && sel.TryGetComponent(out PointGeneration poi))
+            if (sel && sel.TryGetComponent(out Fort poi))
             {
                 int unitCount = poi.currentPoints / 2;
                 if (unitCount > 0 && poi.CanStartRaid())
