@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using Difficulty;
+using UnityEngine;
 
 public class ModeHandler : MonoBehaviour
 {
     public static ModeHandler Instance;
 
+    public Level difficulty = Level.Mittel;
     public bool boboMode;
-    public GameObject toggleMarker;
 
     private void Awake()
     {
@@ -22,9 +23,6 @@ public class ModeHandler : MonoBehaviour
 
     public void ToggleMode()
     {
-
        boboMode = !boboMode;
-       if (toggleMarker) toggleMarker.SetActive(boboMode);
-
     }
 }

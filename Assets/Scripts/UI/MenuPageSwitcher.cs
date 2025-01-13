@@ -8,6 +8,7 @@ public class MenuPageSwitcher : MonoBehaviour
     public GameObject backButton;
 
     public AudioSlider[] audioSliders;
+    public GameObject boboToggleMarker;
 
     void Start()
     {
@@ -37,6 +38,12 @@ public class MenuPageSwitcher : MonoBehaviour
     public void LoadScene(int buildIndex)
     {
         SceneManager.LoadScene(buildIndex);
+    }
+
+    public void ToggleBoboMode()
+    {
+       ModeHandler.Instance.ToggleMode();
+       boboToggleMarker.SetActive(ModeHandler.Instance.boboMode);
     }
 
     public void ExitGame()

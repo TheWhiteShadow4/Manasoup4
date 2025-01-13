@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class PointTracker : MonoBehaviour
 {
+    public static PointTracker Instance;
+
     public TextMeshProUGUI armyUnitsValue;
     public TextMeshProUGUI enemyUnitsValue;
     public GameObject resultat;
@@ -16,6 +18,11 @@ public class PointTracker : MonoBehaviour
 
     [NonSerialized] public int playerUnits = -1;
     [NonSerialized] public int enemyUnits = -1;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void FixedUpdate()
     {

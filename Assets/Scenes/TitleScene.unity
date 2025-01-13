@@ -2571,17 +2571,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed7cd4f7749f54941b269c3fe1bb5f9d, type: 3}
---- !u!114 &1607075774 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5394546798557820839, guid: ed7cd4f7749f54941b269c3fe1bb5f9d, type: 3}
-  m_PrefabInstance: {fileID: 1607075773}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199d3f31aade4ce46acc116d48f6cba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1708865021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,9 +2742,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1607075774}
-        m_TargetAssemblyTypeName: ModeHandler, Assembly-CSharp
-        m_MethodName: ToggleMode
+      - m_Target: {fileID: 1942474805}
+        m_TargetAssemblyTypeName: MenuPageSwitcher, Assembly-CSharp
+        m_MethodName: ToggleBoboMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3206,6 +3195,7 @@ MonoBehaviour:
   audioSliders:
   - {fileID: 1217735918}
   - {fileID: 1017437632}
+  boboToggleMarker: {fileID: 505710144}
 --- !u!1 &2075755735
 GameObject:
   m_ObjectHideFlags: 0
